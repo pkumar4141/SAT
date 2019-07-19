@@ -23,3 +23,16 @@ Note : i used empty index.js which act as dummy here
 
 8 Added the jenkins config.xml file and job file to pull the job 
 
+incase of multiple branch we can create multtiple jobs in jennkins with webhooks for respective project in git and will trigger 
+job when ever any merge happends to the master 
+
+Kubernetes :
+
+1.we can  update the docker image created for the app into docher hub
+
+2. create a cluster from GKE or setup a master and worker node infrastructue .in any of the above case pull the app sever image from the docker hub and create a deployment along with replicasets binded labels and matchlabel modules and with a image pull polcy as Latest 
+
+3.create a another stage in jenkins file which have node(jenkins slave)  as kubernetes master and 
+commands as sh 'kubectl set image deployment.v1.apps/ nginx-deployment node-app=nginx:latest --record=true
+
+we currently testing few of our applications on kubernetes 
