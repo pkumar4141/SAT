@@ -1,0 +1,25 @@
+node('yash'){
+     stage('cloning git'){
+     git credentialsId: 'git_password', url: 'http://35.237.166.25/root/myapp.git'
+     }
+
+     stage('run nodejs app'){
+     sh '''
+     cd node-app
+     whoami
+     id
+     docker 2>/dev/null 1>&2 rm -f `docker ps -a -q` || true
+     docker build -t load-balanced-app .
+     docker run --name app-server1  -p 8081:8080 -d load-balanced-app
+     docker run --name app-server2  -p 8082:8080 -d load-balanced-app
+       '''
+     }
+     stage('run ngnix app'){
+     sh '''
+     pwd
+     cd node-ngnix
+     docker build -t load-balance-nginx .
+     docker run -p 8080:80 -d load-balance-nginx
+     '''
+     }
+}
