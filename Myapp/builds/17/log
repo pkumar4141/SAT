@@ -1,0 +1,104 @@
+Started by GitLab push by Administrator
+Obtained jenkinsfile from git http://35.237.166.25/root/myapp.git
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4Oe0L03gPQyEtHK0vycrnRcdEJv9ONM+Vv5M5N97M2TMAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4D3n/wqSJbDkwdBF6zdh9E7XCNHf5WD3d7lWmve1zuldAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4BUb8FQvC6+jGxhiKHOf1Xy9CCF9HyByS5gbDaJsAMLtAAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyWEgZ+/eT83ILSktQi/crE4gx9ACJ51fTEAAAA[0myash in /home/remote/workspace/Myapp
+[8mha:////4DXpNuUcTI9cSZ5Ne3N7VlkbLCvmZaOlcEbkRTIWZ3VtAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4EwKBgA+kUXnSP9CvEkUdzBize/gVF3XR52OuEMLpkofAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] stage
+[8mha:////4J8IJbznJIGo/ZTxSuMi6ipdXVccEFZQU3dIZprhSAVKAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] { (cloning git)
+[8mha:////4Fs622qTDWdzSXd9cTlBue7fx2vOYdlzAMvg+hw1hiSyAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gfg7KmOvAAAAA==[0m[Pipeline] git
+using credential git_password
+Fetching changes from the remote Git repository
+skipping resolution of commit remotes/origin/master, since it originates from another repository
+Checking out Revision c128e95e4b3a0ff50de811100d829b37b6cf31e4 (refs/remotes/origin/master)
+ > git rev-parse --is-inside-work-tree # timeout=10
+ > git config remote.origin.url http://35.237.166.25/root/myapp.git # timeout=10
+Fetching upstream changes from http://35.237.166.25/root/myapp.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials gitpass
+ > git fetch --tags --progress http://35.237.166.25/root/myapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+Commit message: "vshndvj"
+[8mha:////4GJfkF33e8elHflCB7FUweoJLUsANmpzXZ2K9oZWsnfrAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9Dg2gqvAAAAA==[0m[Pipeline] }
+[8mha:////4GuSMuaAl5XmYCOrTA10nHwL2ELhEOIwmy6AKxWMFpQaAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbWRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9J+wGOvAAAAA==[0m[Pipeline] // stage
+[8mha:////4AKzpLQ/Ffnkzi4wVx9ABi3QxfPJvzy04cLBpPmW/Uw8AAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDEh2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INtuQqUcEAAAA=[0m[Pipeline] stage
+[8mha:////4NuH1WXaMhjK/ka9WSQoSRFVJnWpy9SM4Z3fRAUl7QTgAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoiUzoiJNerCCUITQtLo/zZJSSdOxNW4Ay2VmPBg2Zas93pDGQOcKBjuNHYWY2t570czJ54pdDdPmTu68pYwkte80bkhpc9rbShpWFUw2AjYamw9RYsmwU44+ZCVl2iqSwrzdhTArBrgCYWYyUmG9C1TgP19VJHwx/kLgKlPwOrDYvXyLD8BobDcwgAAAA==[0m[Pipeline] { (run nodejs app)
+[8mha:////4Du64SSXPSzM/CN8IKqWMxRU41fjCOqSRbyw7AqbxGtZAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggysXWsbBkaT4AJIoT5nwCRVJ7Iq3kH0cxYucXOvm3e8wXrGOBIQTOrcDAYO8O8m3RZLFMYro4ys3RhHWEkp5hQWVCvTgsKSgqWVDWsOGwUdo6iQZ1gy628y8ZJ1M05hfIdONSmH+EBFS/mJEP6whxgd5v6SPjz/BXA7BPUbfupvX8DpQJrNb4AAAA=[0m[Pipeline] sh
++ cd node-app
++ whoami
+ybotcha2
++ id
+uid=1000(ybotcha2) gid=1001(ybotcha2) groups=1001(ybotcha2),4(adm),39(video),1000(google-sudoers),1006(docker)
+++ docker ps -a -q
++ docker rm 36f97932d54b 93e939bcc972 5349946fdad8
++ true
+++ docker ps -f status=exited -q
++ docker rm
++ true
++ docker build -t load-balanced-app .
+Sending build context to Docker daemon 3.072 kB
+Step 1/8 : FROM node:10
+ ---> 4ae749096a47
+Step 2/8 : RUN mkdir -p /usr/src/app && chown -R node:node /usr/src/app
+ ---> Using cache
+ ---> c35fc1c7b099
+Step 3/8 : COPY index.js /usr/src/app
+ ---> Using cache
+ ---> b7bc5b387e29
+Step 4/8 : USER node
+ ---> Using cache
+ ---> 90c35f0d945e
+Step 5/8 : RUN npm install
+ ---> Using cache
+ ---> 03fe5903843c
+Step 6/8 : COPY . /usr/src/app
+ ---> Using cache
+ ---> 9991d8de56ff
+Step 7/8 : EXPOSE 8080
+ ---> Using cache
+ ---> a680a8c98370
+Step 8/8 : CMD node /usr/src/app/index
+ ---> Using cache
+ ---> 6d3a40ce481c
+Successfully built 6d3a40ce481c
++ docker run --name app-server1 -p 8081:8080 -d load-balanced-app
+605cdc8b37a5e440f3d50486787c5d0f1fe93bd77de23323d3aaed7d91e5344b
+ > git checkout -f c128e95e4b3a0ff50de811100d829b37b6cf31e4
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master c128e95e4b3a0ff50de811100d829b37b6cf31e4
+ > git rev-list --no-walk 729039b311e17fe3c0f75e50c2c9a66787ce978f # timeout=10
++ docker run --name app-server2 -p 8082:8080 -d load-balanced-app
+a994bb913bf53d37ef3491dd8a5add4a91c37406bb5774753c58f33715755f26
+[8mha:////4ABLj/mxNCi4IpguNf9HyD5bAP0QUSKwlygpooYYLo7FAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggyGUvHypah8QSYIEKY/wkQSeWJvJp3EM2MlVvs7NvmPV+wjgGOFDSzCgeDsTPMu0mXxTKF4eooM0sX1hFGcooJlQX16rSgoKRgSVXDisNGYecoGtQJttzKu2ycRN2cUyjfgUNt+hEeUPFiTjKkL8wBdrepj4Q/z18BzN4nqNv9p9o3geV5574AAAA=[0m[Pipeline] }
+[8mha:////4AumakPvELl7MHan29CsGUUMOiI/W/pSMwIRf0FPsIQGAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICEh2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nbf2r7Bq/le42+AAAA[0m[Pipeline] // stage
+[8mha:////4JQNesTpqUkHaU5zGSffQLA6afj0YaRv+Gm5wKdY6V8NAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjJKgQFa3lhheY2Bgn1l2wLyQVL+Jr/IFAJCq22llpNc8XlDnBgZKXjcM2YK6D7GLvpyYHSu0l0iAbOsuaMFN0UrtBk3XHGTWxgzmigIWCpcM6Ug7oGVaqMXdTRYO+OnGatr2CItgbPECoycwm8RfGBOtrbzPhz/NXAGPHILYMxWb3OZZvBXXnAcEAAAA=[0m[Pipeline] stage
+[8mha:////4Ngh6XTyiSwCjqR0uJ5EBvRC/5SCNk83eWyvMvIFxp3TAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUDLAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD/s94rDCAAAA[0m[Pipeline] { (run ngnix app)
+[8mha:////4MUPP8jiQmNHwXOFcb91fVeK8bH1oTx7uW1kI2CEye29AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGigQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN27Iu42+AAAA[0m[Pipeline] sh
++ pwd
+/home/remote/workspace/Myapp
++ cd node-ngnix
++ docker build -t load-balance-nginx .
+Sending build context to Docker daemon 3.072 kB
+Step 1/3 : FROM nginx
+ ---> 98ebf73aba75
+Step 2/3 : RUN rm /etc/nginx/conf.d/default.conf
+ ---> Using cache
+ ---> 79a44c6e8cb4
+Step 3/3 : COPY nginx.conf /etc/nginx/conf.d/default.conf
+ ---> Using cache
+ ---> 157257916295
+Successfully built 157257916295
++ docker run -p 8080:80 -d load-balance-nginx
+44e3b821b8633a462d18593fed84102df613c2ea16216d2a03a5b7d991ac4a47
+/usr/bin/docker-current: Error response from daemon: driver failed programming external connectivity on endpoint dreamy_euler (548e2a240919319491f8f3f7872c662ce1e420417a874f973390a5d30c016c9a): Bind for 0.0.0.0:8080 failed: port is already allocated.
+[8mha:////4FugM6ZgS8As4tXI716b8R0xASYJQ6z/iE9mskA66sUOAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGoSEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQHhgNoTvgAAAA==[0m[Pipeline] }
+[8mha:////4Im+EphobYQPEGtyb/3VudV7ItIxZg6R9AlNwZwWFX4gAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiCgqEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQH+Ao9BvgAAAA==[0m[Pipeline] // stage
+[8mha:////4GbmJPPqfHxDCWqFFLOSoSyyCgl1XUOkufu805hhBV1yAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJBiA5R0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYu06Q77aCbP8BK1nRVL0AAAA=[0m[Pipeline] }
+[8mha:////4AA+TGQLfoGruZZ/3+FPA5SnxVIZSXBMY9wjTqwF5clvAAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRUCIqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBj1wny3VaQ7T845dX3vQAAAA==[0m[Pipeline] // node
+[8mha:////4FqVy8Oa932Ha1n1ACfIHCpJasKwLp/Cty4DDE3VVe93AAAAoh+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6IkrMbJtWHxCyrUWmjeg/YhTH6Rv+Y/SCRx8k73nOW83timiBNHp1pLnadUe9WH0S1PTRy7W+BJtXxVNVPiYFVlp4obe16xYrFYl+XYaOws1YGTJyfY69Y8TBEMueIicXFHjdw3A57I9FIWE+ULc8ThPjaJ6df5G8Dc94K8LAVZ+QF+r3LHvQAAAA==[0m[Pipeline] End of Pipeline
+ERROR: script returned exit code 125
+Finished: FAILURE

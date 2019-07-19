@@ -1,0 +1,196 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.31">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause plugin="gitlab-plugin@1.5.12">
+            <data>
+              <actionType>PUSH</actionType>
+              <sourceProjectId>19</sourceProjectId>
+              <targetProjectId>19</targetProjectId>
+              <branch>master</branch>
+              <sourceBranch>master</sourceBranch>
+              <userName>Administrator</userName>
+              <userEmail></userEmail>
+              <sourceRepoHomepage>http://35.237.166.25/root/myapp</sourceRepoHomepage>
+              <sourceRepoName>myapplication</sourceRepoName>
+              <sourceNamespace>root</sourceNamespace>
+              <sourceRepoUrl>git@35.237.166.25:root/myapp.git</sourceRepoUrl>
+              <sourceRepoSshUrl>git@35.237.166.25:root/myapp.git</sourceRepoSshUrl>
+              <sourceRepoHttpUrl>http://35.237.166.25/root/myapp.git</sourceRepoHttpUrl>
+              <mergeRequestTitle></mergeRequestTitle>
+              <mergeRequestDescription></mergeRequestDescription>
+              <mergeRequestState></mergeRequestState>
+              <mergedByUser></mergedByUser>
+              <mergeRequestAssignee></mergeRequestAssignee>
+              <targetBranch>master</targetBranch>
+              <targetRepoName></targetRepoName>
+              <targetNamespace></targetNamespace>
+              <targetRepoSshUrl></targetRepoSshUrl>
+              <targetRepoHttpUrl></targetRepoHttpUrl>
+              <triggeredByUser>Administrator</triggeredByUser>
+              <before>c128e95e4b3a0ff50de811100d829b37b6cf31e4</before>
+              <after>3ce8cd7977bae94ae8397ae34fb80242def23817</after>
+              <lastCommit>3ce8cd7977bae94ae8397ae34fb80242def23817</lastCommit>
+              <targetProjectUrl>http://35.237.166.25/root/myapp</targetProjectUrl>
+            </data>
+          </com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.triggers.SCMTrigger_-BuildAction/>
+    <hudson.plugins.git.RevisionParameterAction plugin="git@3.9.3">
+      <commit>remotes/origin/master</commit>
+      <combineCommits>false</combineCommits>
+      <repoURL plugin="git-client@2.7.6">
+        <path>root/myapp.git</path>
+        <rawPath>root/myapp.git</rawPath>
+        <user>git</user>
+        <port>-1</port>
+        <host>35.237.166.25</host>
+      </repoURL>
+    </hudson.plugins.git.RevisionParameterAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.13">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.9.3">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.7.6">
+              <sha1>3ce8cd7977bae94ae8397ae34fb80242def23817</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>18</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>http://35.237.166.25/root/myapp.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.9.3">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/home/remote/workspace/Myapp</ws>
+    </hudson.plugins.git.GitTagAction>
+    <org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState plugin="workflow-scm-step@2.7">
+      <revisionStates>
+        <entry>
+          <string>git http://35.237.166.25/root/myapp.git</string>
+          <hudson.scm.SCMRevisionState_-None/>
+        </entry>
+      </revisionStates>
+    </org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState>
+  </actions>
+  <queueId>548</queueId>
+  <timestamp>1563547702388</timestamp>
+  <startTime>1563547702392</startTime>
+  <result>SUCCESS</result>
+  <description>Started by GitLab push by Administrator</description>
+  <duration>3629</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>node(&apos;yash&apos;){
+     stage(&apos;cloning git&apos;){
+     git credentialsId: &apos;git_password&apos;, url: &apos;http://35.237.166.25/root/myapp.git&apos;
+     }
+
+     stage(&apos;run nodejs app&apos;){
+     sh &apos;&apos;&apos;
+     cd node-app
+     whoami
+     id
+     docker 2&gt;/dev/null 1&gt;&amp;2 rm -f `docker ps -a -q` || true
+     docker build -t load-balanced-app .
+     docker run --name app-server1  -p 8081:8080 -d load-balanced-app
+     docker run --name app-server2  -p 8082:8080 -d load-balanced-app
+       &apos;&apos;&apos;
+     }
+     stage(&apos;run ngnix app&apos;){
+     sh &apos;&apos;&apos;
+     pwd
+     cd node-ngnix
+     docker build -t load-balance-nginx .
+     docker run -p 8080:80 -d load-balance-nginx
+     &apos;&apos;&apos;
+     }
+}
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>293568169</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>300300819</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>616330436</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>165201103</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>23846672</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>22</iota>
+    <head>1:22</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList">
+    <org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+      <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.3">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+          <hudson.plugins.git.UserRemoteConfig>
+            <url>http://35.237.166.25/root/myapp.git</url>
+            <credentialsId>git_password</credentialsId>
+          </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches class="singleton-list">
+          <hudson.plugins.git.BranchSpec>
+            <name>*/master</name>
+          </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="empty-list"/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.LocalBranch>
+            <localBranch>master</localBranch>
+          </hudson.plugins.git.extensions.impl.LocalBranch>
+        </extensions>
+      </scm>
+      <node>yash</node>
+      <workspace>/home/remote/workspace/Myapp</workspace>
+      <changelogFile>/var/lib/jenkins/jobs/Myapp/builds/18/changelog0.xml</changelogFile>
+      <pollingBaseline class="hudson.scm.SCMRevisionState$None" reference="../../../actions/org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState/revisionStates/entry/hudson.scm.SCMRevisionState_-None"/>
+    </org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+  </checkouts>
+</flow-build>

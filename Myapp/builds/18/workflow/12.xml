@@ -1,0 +1,33 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.3">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.69">
+    <parentIds>
+      <string>11</string>
+    </parentIds>
+    <id>12</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.steps.durable_task.ShellStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.69">
+      <arguments>
+        <entry>
+          <string>script</string>
+          <string>
+     cd node-app
+     whoami
+     id
+     docker 2&gt;/dev/null 1&gt;&amp;2 rm -f `docker ps -a -q` || true
+     docker build -t load-balanced-app .
+     docker run --name app-server1  -p 8081:8080 -d load-balanced-app
+     docker run --name app-server2  -p 8082:8080 -d load-balanced-app
+       </string>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.33">
+      <startTime>1563547703761</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+  </actions>
+</Tag>
