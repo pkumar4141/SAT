@@ -1,6 +1,6 @@
 we have a file descriptor limit when the iimit exceeds we face this kind of error
 
-ulimt -a |grep open 
+ulimt -a |grep open if command doesnot work try ulimit -n
 
 will give the open files 
 
