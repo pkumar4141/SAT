@@ -1,11 +1,13 @@
-normally /usr/src contains buil and release of kernel and hardware
+normally `/usr/src` contains old build and release of kernel and hardware
 
 to resolve it 
 run 
-sudo apt-get autoremove -y in ubuntu machines
+`sudo apt-get autoremove -y` in ubuntu machines
 
-in other check the current kernel relese
+other tha ubuntu machines
 
-uname --kernel-release or uname -r 
+check the current kernel relese
 
-delete linux headers and linux images whih are not in use
+`uname --kernel-release` or `uname -r` 
+
+delete old linux headers and linux images
