@@ -33,6 +33,5 @@ Kubernetes :
 2. create a cluster from GKE or setup a master and worker node infrastructue .in any of the above case pull the app sever image from the docker hub and create a deployment along with replicasets binded labels and matchlabel modules and with a image pull polcy as Latest 
 
 3.create a another stage in jenkins file which have node(jenkins slave)  as kubernetes master and 
-commands as sh 'kubectl set image deployment.v1.apps/ nginx-deployment node-app=nginx:latest --record=true
-
+commands as sh `kubectl set image deployment.v1.apps/ nginx-deployment node-app=nginx:latest --record=true`
 we currently testing few of our applications on kubernetes 
